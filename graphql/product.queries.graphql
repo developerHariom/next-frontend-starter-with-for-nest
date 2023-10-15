@@ -1,0 +1,30 @@
+query GetAllProducts {
+  getAllProducts {
+    id
+    name
+    description
+    category
+    originalPrice
+    discountPrice
+    stock
+    createdAt
+    updatedAt
+    seller {
+      id
+      firstName
+      lastName
+      role
+      country
+      address
+    }
+    images {
+      public_id
+      imgSrc
+    }
+  }
+}
+
+
+
+
+

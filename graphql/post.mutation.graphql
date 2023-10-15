@@ -1,0 +1,10 @@
+input CreatePostInput {
+  title: String!
+  content: String!
+}
+
+mutation CreatePost($data: CreatePostInput!) {
+  createPost(data: $data) {
+    ...GetPostItem
+  }
+}

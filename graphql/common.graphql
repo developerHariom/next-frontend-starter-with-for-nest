@@ -1,0 +1,9 @@
+
+
+fragment GetPostItem on Post {
+  id
+  title
+  content
+  createdAt
+  updatedAt
+}

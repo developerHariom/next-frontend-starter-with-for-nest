@@ -1,0 +1,7 @@
+query TrendingPost {
+  trendingPosts {
+    id
+    title
+    content
+  }
+}

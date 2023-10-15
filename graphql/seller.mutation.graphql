@@ -1,0 +1,45 @@
+mutation SellerRegistration(
+  $firstName: String
+  $lastName: String!
+  $email: String!
+  $country: String!
+  $address: String!
+  $shopName: String!
+  $shopAddress: String!
+  $password: String!
+  $confirmPassword: String!
+  $contact: String!
+) {
+  sellerRegister(
+    data: {
+      firstName: $firstName
+      lastName: $lastName
+      email: $email
+      country: $country
+      address: $address
+      shopName: $shopName
+      shopAddress: $shopAddress
+      password: $password
+      confirmPassword: $confirmPassword
+      contact: $contact
+    }
+  )
+}
+
+mutation SellerLogin($email: String!, $password: String!) {
+  sellerLogin(data: { email: $email, password: $password }){
+    seller {
+      id
+      firstName
+      lastName
+      contact
+      email
+      contact
+      role
+      country
+      address
+      shopName
+      password
+    }
+  }
+}

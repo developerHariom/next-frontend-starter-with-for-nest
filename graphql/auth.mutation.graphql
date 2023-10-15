@@ -1,0 +1,35 @@
+mutation Register(
+  $name: String
+  $email: String!
+  $password: String!
+  $confirmPassword: String!
+  $mobile: String!
+) {
+  register(
+    data: {
+      name: $name
+      email: $email
+      password: $password
+      confirmPassword: $confirmPassword
+      mobile: $mobile
+    }
+  )
+}
+
+
+mutation Login($emailOrMobile: String!, $password: String!) {
+  login(data: { emailOrMobile: $emailOrMobile, password: $password }){
+    user {
+      id
+      name
+      email
+      mobile
+      role
+      authorStatus
+    }
+  }
+}
+
+mutation Logout {
+  logout
+}
