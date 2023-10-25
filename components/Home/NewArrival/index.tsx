@@ -1,9 +1,10 @@
+"use client";
 import ProductCard from "@/components/Product/ProductCard";
 import { ArrowRight } from "lucide-react";
 import React from "react";
 
+export default function NewArrivals() {
 
-const NewArrivals = () => {
   return (
     <section className="w-full md:w-[70%]  m-auto mt-10 ">
       <div className="flex justify-between">
@@ -13,12 +14,11 @@ const NewArrivals = () => {
         </div>
       </div>
       <div className="grid w-full grid-cols-1 gap-2 mx-auto mt-5 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-        {Array.from({ length: 12 }).map((_, index) => (
-          <ProductCard key={index} />
-        ))}
+        {/* {products?.map((item, i) => {
+          return <ProductCard key={i} />;
+        })} */}
+        sdf
       </div>
     </section>
   );
-};
-
-export default NewArrivals;
+}

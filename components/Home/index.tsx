@@ -6,11 +6,9 @@ import Banner from "../Utilities/Banner";
 import GamerWorld from "./GamerWorld";
 import Sales from "../Utilities/Sales";
 import PopularSales from "./PopularSales";
-import { getClient } from "@/lib/client";
-import { GetAllProductsDocument } from "@/graphql/generated/schema";
 
-const HomeComponent = async () => {
-  
+const HomeComponent = async ({ products }: any) => {
+  console.log(products,"homepp")
   return (
     <div>
       <Carousel />

@@ -1,14 +1,11 @@
 import HomeComponent from "@/components/Home";
-import Preloader from "@/components/Preloader";
-import { ThemeSwitch } from "@/components/Utilities/theme-switch";
-import { GetAllProductsDocument } from "@/graphql/generated/schema";
 import { getClient } from "@/lib/client";
-import { setProducts } from "@/redux/slices/productSlice";
-import { store } from "@/redux/store";
-
+import { GetAllProductsDocument } from "@/graphql/generated/schema";
 import { Product } from "@/types/product";
+import { ThemeSwitch } from "@/components/Utilities/theme-switch";
+import { useProductStore } from "@/store/useProductStore";
+import ProductInitializer from "../../components/ProductInitializer";
 export const dynamic = "force-dynamic";
-
 export const getAllProducts = async () => {
   const { data } = await getClient().query<{ getAllProducts: Product[] }>({
     query: GetAllProductsDocument,
@@ -16,15 +13,21 @@ export const getAllProducts = async () => {
 
   return data?.getAllProducts;
 };
-
 export default async function Home() {
   const data = await getAllProducts();
-  store.dispatch(setProducts(data));
+  if(data){
+    useProductStore.setState({
+      products: data,
+    });
+  
+  }
+ 
+ 
   return (
     <>
-      <Preloader products={data} />
+      <ProductInitializer products={data} />
       <ThemeSwitch />
-      <HomeComponent />
+      <HomeComponent products={data} />
     </>
   );
 }

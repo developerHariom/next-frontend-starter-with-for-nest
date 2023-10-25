@@ -10,7 +10,8 @@ import { useRouter } from "next/navigation";
 import { useSellerLoginMutation } from "@/graphql/generated/schema";
 import { SellerLoginSchema, sellerLoginSchema } from "@/validation/seller";
 import { useDispatch } from "react-redux";
-import { setAuth } from "@/redux/slices/authSlice";
+// import { setAuth } from "@/app/store/store";
+// import { setAuth } from "@/redux/slices/authSlice";
 // import { useAuthStore } from "@/store/auth";
 
 const SellerLoginForm = () => {
@@ -24,7 +25,7 @@ const SellerLoginForm = () => {
   const [sellerLogin, { error, reset }] = useSellerLoginMutation();
 
   const router = useRouter();
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
   // const setUser = useAuthStore.getState().setUser;
   const onSubmit: SubmitHandler<SellerLoginSchema> = async (values) => {
     try {
@@ -35,11 +36,14 @@ const SellerLoginForm = () => {
         },
       });
       if (response?.sellerLogin?.seller) {
-        dispatch(
-          setAuth({
-            user: response?.sellerLogin?.seller,
-          })
-        );
+        // dispatch(setAuth({
+        //   user:response?.sellerLogin?.seller
+        // }));
+        // dispatch(
+        //   setAuth({
+        //     user: response?.sellerLogin?.seller,
+        //   })
+        // );
 
         toast.success("Logged In Success");
         router.replace("/seller/dashboard");

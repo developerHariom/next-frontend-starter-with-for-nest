@@ -21,7 +21,7 @@ const SellerDashSIdebar = () => {
       </div>
       <div className="mb-4">
         <Link
-          href={"/"}
+          href={"/seller/dashboard/all-products"}
           className="flex items-center gap-2 p-2 text-red-500 rounded hover:bg-red-100"
         >
           <ShoppingCart size={24} color="#e00000" />

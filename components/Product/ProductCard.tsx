@@ -10,8 +10,6 @@ import { Expand, GitCompare, Heart } from "lucide-react";
 
 const ProductCard = () => {
   const [isHovered, setIsHovered] = useState(false);
-
-  
   return (
     <Card
       className="w-full h-[400px] rounded-none relative mx-auto"
