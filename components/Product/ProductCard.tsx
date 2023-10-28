@@ -36,7 +36,7 @@ const ProductCard = () => {
             alt="product"
             sizes="100vw"
             fill
-            objectFit="cover"
+            
           />
         </div>
         <CardFooter className="relative flex flex-col h-full gap-3 p-5 pb-0 mt-4">

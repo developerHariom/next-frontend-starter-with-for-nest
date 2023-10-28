@@ -516,8 +516,13 @@ export function useTrendingPostLazyQuery(baseOptions?: Apollo.LazyQueryHookOptio
           const options = {...defaultOptions, ...baseOptions}
           return Apollo.useLazyQuery<TrendingPostQuery, TrendingPostQueryVariables>(TrendingPostDocument, options);
         }
+export function useTrendingPostSuspenseQuery(baseOptions?: Apollo.SuspenseQueryHookOptions<TrendingPostQuery, TrendingPostQueryVariables>) {
+          const options = {...defaultOptions, ...baseOptions}
+          return Apollo.useSuspenseQuery<TrendingPostQuery, TrendingPostQueryVariables>(TrendingPostDocument, options);
+        }
 export type TrendingPostQueryHookResult = ReturnType<typeof useTrendingPostQuery>;
 export type TrendingPostLazyQueryHookResult = ReturnType<typeof useTrendingPostLazyQuery>;
+export type TrendingPostSuspenseQueryHookResult = ReturnType<typeof useTrendingPostSuspenseQuery>;
 export type TrendingPostQueryResult = Apollo.QueryResult<TrendingPostQuery, TrendingPostQueryVariables>;
 export const CreateProductDocument = gql`
     mutation CreateProduct($data: CreateProductInput!) {
@@ -623,8 +628,13 @@ export function useGetAllProductsLazyQuery(baseOptions?: Apollo.LazyQueryHookOpt
           const options = {...defaultOptions, ...baseOptions}
           return Apollo.useLazyQuery<GetAllProductsQuery, GetAllProductsQueryVariables>(GetAllProductsDocument, options);
         }
+export function useGetAllProductsSuspenseQuery(baseOptions?: Apollo.SuspenseQueryHookOptions<GetAllProductsQuery, GetAllProductsQueryVariables>) {
+          const options = {...defaultOptions, ...baseOptions}
+          return Apollo.useSuspenseQuery<GetAllProductsQuery, GetAllProductsQueryVariables>(GetAllProductsDocument, options);
+        }
 export type GetAllProductsQueryHookResult = ReturnType<typeof useGetAllProductsQuery>;
 export type GetAllProductsLazyQueryHookResult = ReturnType<typeof useGetAllProductsLazyQuery>;
+export type GetAllProductsSuspenseQueryHookResult = ReturnType<typeof useGetAllProductsSuspenseQuery>;
 export type GetAllProductsQueryResult = Apollo.QueryResult<GetAllProductsQuery, GetAllProductsQueryVariables>;
 export const SellerRegistrationDocument = gql`
     mutation SellerRegistration($firstName: String, $lastName: String!, $email: String!, $country: String!, $address: String!, $shopName: String!, $shopAddress: String!, $password: String!, $confirmPassword: String!, $contact: String!) {

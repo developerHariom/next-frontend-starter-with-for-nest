@@ -11,7 +11,7 @@ const Banner = () => {
             alt="product"
             fill
             sizes="100vw"
-            objectFit="cover"
+            
           />
         </div>
       </div>
@@ -29,7 +29,7 @@ const Banner = () => {
             alt="product"
             fill
             sizes="100vw"
-            objectFit="cover"
+           
           />
         </div>
       </div>

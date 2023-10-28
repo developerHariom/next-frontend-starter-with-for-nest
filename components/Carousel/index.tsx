@@ -23,8 +23,7 @@ const Carousel = () => {
           height={0}
           width={0}
           alt="carousel"
-          objectFit="cover"
-          layout="fill"
+          fill
           style={{
             width: "100%",
             height: "100%",
@@ -39,8 +38,7 @@ const Carousel = () => {
           sizes="100vw"
           height={0}
           width={0}
-          objectFit="cover"
-          layout="fill"
+         fill
           alt="carousel"
           style={{
             width: "100%",
