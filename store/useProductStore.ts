@@ -17,6 +17,7 @@ export const useProductStore = create(
     {
       name: "products",
       storage: createJSONStorage(() => localStorage),
+      
     }
   )
 );

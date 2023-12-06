@@ -1,4 +1,3 @@
-
 import TopBar from "@/components/Home/Navbar/TopBar";
 import SearchNavbar from "@/components/Home/Navbar/SearchNavbar";
 import "@/styles/globals.css";
@@ -11,7 +10,6 @@ export default async function DashboardLayout({
 }: {
   children: React.ReactNode;
 }) {
-
   return (
     <section>
       <div className="relative flex flex-col h-screen">
@@ -19,9 +17,7 @@ export default async function DashboardLayout({
         <SearchNavbar />
         <Navbar />
         <main>
-
           <Providers>{children}</Providers>
-        
         </main>
         <Footer />
       </div>

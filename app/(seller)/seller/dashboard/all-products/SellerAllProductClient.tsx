@@ -1,10 +1,14 @@
+"use client"
 import { useProductStore } from "@/store/useProductStore";
 import React from "react";
 
 const SellerAllProductClient = () => {
-  const p = useProductStore.getState().products;
-  console.log(p, "done");
-  return <div></div>;
+  return (
+    <>
+      {console.log(useProductStore.getState().products)}
+      <p>{useProductStore.getState().products[0]?.name}ss</p>
+    </>
+  );
 };
 
 export default SellerAllProductClient;

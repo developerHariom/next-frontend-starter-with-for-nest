@@ -1,7 +1,7 @@
 "use client";
 import { HttpLink } from "@apollo/client/link/http";
-import { ApolloLink } from "@apollo/client";
-import { onError } from "apollo-link-error";
+import { ApolloLink, FetchResult, Operation } from "@apollo/client";
+import { onError } from "@apollo/client/link/error";
 import { RetryLink } from "@apollo/client/link/retry";
 import {
   SSRMultipartLink,
@@ -9,7 +9,7 @@ import {
   NextSSRApolloClient,
   NextSSRInMemoryCache,
 } from "@apollo/experimental-nextjs-app-support/ssr";
-import { Operation, FetchResult } from "apollo-link";
+// import { Operation, FetchResult } from   "apollo-link";
 import { SubscriptionObserver } from "zen-observable-ts";
 import { fetchRefreshToken, handleLogout } from ".";
 import { Observable } from "zen-observable-ts";
@@ -49,11 +49,8 @@ const errorLink = onError(
                     forward as any,
                     subscriber
                   );
-                }
-                else{
-                
-                  handleLogout()
-                  
+                } else {
+                  handleLogout();
                 }
               } catch (err) {
                 console.error(err);

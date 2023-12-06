@@ -52,17 +52,13 @@ const LoginForm = () => {
           router.push("/");
         }
       }
-    } catch (error) {
-      console.error("Failed to register:", error);
+    } catch (err) {
+      toast.error(error?.message, {
+        icon: "☹️",
+      });
       reset();
     }
   };
-
-  if (error) {
-    toast.error(error?.message, {
-      icon: "☹️",
-    });
-  }
 
   return (
     <>

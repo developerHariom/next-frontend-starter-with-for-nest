@@ -1,29 +1,17 @@
-
-
 import React from "react";
 import SellerAllProductClient from "./SellerAllProductClient";
 import { getClient } from "@/lib/client";
 import { Product } from "@/types/product";
 import { GetAllProductsDocument } from "@/graphql/generated/schema";
 import { useProductStore } from "@/store/useProductStore";
+import ProductInitializer from "@/components/ProductInitializer";
 
-export const getAllProducts = async () => {
-  const { data } = await getClient().query<{ getAllProducts: Product[] }>({
-    query: GetAllProductsDocument,
-  });
-
-  return data?.getAllProducts;
-};
-const page = async() => {
-   const data = await getAllProducts();
-   if (data) {
-     useProductStore.setState({
-       products: data,
-     });
-   }
-  return <>
-  <SellerAllProductClient/>
-  </>
+const page = async () => {
+  return (
+    <>
+      <SellerAllProductClient />
+    </>
+  );
 };
 
 export default page;

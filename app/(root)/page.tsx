@@ -5,6 +5,7 @@ import { Product } from "@/types/product";
 import { ThemeSwitch } from "@/components/Utilities/theme-switch";
 import { useProductStore } from "@/store/useProductStore";
 import ProductInitializer from "../../components/ProductInitializer";
+import SellerAllProductClient from "../(seller)/seller/dashboard/all-products/SellerAllProductClient";
 export const dynamic = "force-dynamic";
 export const getAllProducts = async () => {
   const { data } = await getClient().query<{ getAllProducts: Product[] }>({
@@ -15,19 +16,14 @@ export const getAllProducts = async () => {
 };
 export default async function Home() {
   const data = await getAllProducts();
-  if(data){
-    useProductStore.setState({
-      products: data,
-    });
-  
-  }
- 
- 
+  useProductStore.setState({ products: data });
+
   return (
     <>
       <ProductInitializer products={data} />
       <ThemeSwitch />
       <HomeComponent products={data} />
+      <SellerAllProductClient />
     </>
   );
 }

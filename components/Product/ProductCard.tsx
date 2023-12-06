@@ -30,12 +30,14 @@ const ProductCard = () => {
         </div>
       )}
       <div className="relative w-full h-full pb-0 ">
-        <div className="relative w-40 h-40 m-auto mt-10">
+        <div className="relative w-40 h-40 m-auto mt-10 border-2">
           <Image
             src="/img/headright.png"
             alt="product"
             sizes="100vw"
             fill
+            className="border-2 border-red-300"
+            
             
           />
         </div>
